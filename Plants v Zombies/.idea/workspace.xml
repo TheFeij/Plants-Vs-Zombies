@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="">
+    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Added ConeHeadZombie and FootballZombie classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,13 +149,34 @@
       <workItem from="1612087021274" duration="532000" />
       <workItem from="1612100120051" duration="459000" />
       <workItem from="1612113465651" duration="667000" />
+      <workItem from="1612124893052" duration="380000" />
     </task>
+    <task id="LOCAL-00001" summary="Added ConeHeadZombie and FootballZombie classes">
+      <created>1612125045135</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1612125045136</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added ConeHeadZombie and FootballZombie classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ConeHeadZombie and FootballZombie classes" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="227" y="0" key="CommitChangelistDialog2" timestamp="1612125042443">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="227" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612125042443" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1612125129263">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612125129263" />
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1612124892043">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
