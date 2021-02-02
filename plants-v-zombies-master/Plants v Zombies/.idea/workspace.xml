@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Snowpea and peashooter done" />
+    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="GiantWallNut and CherryBomb done">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612190568230</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="GiantWallNut and CherryBomb done">
+      <created>1612209938176</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1612209938176</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +190,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Plant and Sunflower done" />
     <MESSAGE value="Snowpea and peashooter done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Snowpea and peashooter done" />
+    <MESSAGE value="GiantWallNut and CherryBomb done" />
+    <option name="LAST_COMMIT_MESSAGE" value="GiantWallNut and CherryBomb done" />
   </component>
   <component name="masterDetails">
     <states>
