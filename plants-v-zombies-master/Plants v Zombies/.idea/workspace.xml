@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Card Sunflower done" />
+    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Cards and coordinates and sun done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612253826560</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cards and coordinates and sun done">
+      <created>1612296133771</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612296133771</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +204,8 @@
     <MESSAGE value="Snowpea and peashooter done" />
     <MESSAGE value="GiantWallNut and CherryBomb done" />
     <MESSAGE value="Card Sunflower done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Card Sunflower done" />
+    <MESSAGE value="Cards and coordinates and sun done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cards and coordinates and sun done" />
   </component>
   <component name="masterDetails">
     <states>
