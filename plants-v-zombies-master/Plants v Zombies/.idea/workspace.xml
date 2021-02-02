@@ -214,6 +214,12 @@
     <MESSAGE value="Cards and coordinates and sun done" />
     <option name="LAST_COMMIT_MESSAGE" value="Cards and coordinates and sun done" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="151" y="0" key="CommitChangelistDialog2" timestamp="1612299609791">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="151" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612299609791" />
+  </component>
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">

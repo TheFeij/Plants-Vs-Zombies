@@ -1,9 +1,7 @@
 package Component;
 import Template.GameState;
-
 import java.awt.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -13,7 +11,7 @@ import java.util.TimerTask;
  * it is the superclass of Zombie, Plant, Bullets, LawnMower and sun;
  *
  * @author Feij
- * @since 2021.1.24
+ * @since 2021.1.31
  */
 public class Component implements Serializable {
 
@@ -35,10 +33,13 @@ public class Component implements Serializable {
     private transient Timer timer;
     // task to be repeated to simulate bullet movement
     private transient TimerTask task;
-    // ...
+    // period of the component
     private int period;
+    // if component is dead or not
     private boolean isDead;
+    // a field to hold current time of system in certain times
     private long timeHolder;
+    //the amount of time we have waited, this is used when loading a game
     private long loadTime;
 
     /**
@@ -143,7 +144,9 @@ public class Component implements Serializable {
     }
     //////////////////////////////////////////////////////////////
 
-
+    /**
+     * A method to cancel timer
+     */
     public void cancelTimer(){ timer.cancel(); }
 
     /**
@@ -162,8 +165,9 @@ public class Component implements Serializable {
         life -= decreaseAmount;
     }
 
-
-
+    /**
+     * A method to save component
+     */
     public void save(){
         loadTime += System.currentTimeMillis() - timeHolder;
         if(timer != null){
@@ -172,6 +176,9 @@ public class Component implements Serializable {
         }
     }
 
+    /**
+     * A method to load a component
+     */
     public void load(){
         timer = new Timer();
         timeHolder = System.currentTimeMillis();
