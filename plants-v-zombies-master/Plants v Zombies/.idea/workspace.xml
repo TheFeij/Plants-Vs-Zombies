@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Added Classes again">
+    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Updated Template classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,6 +148,7 @@
       <workItem from="1611915467871" duration="1717000" />
       <workItem from="1612086486795" duration="23000" />
       <workItem from="1612299589261" duration="240000" />
+      <workItem from="1612333007533" duration="263000" />
     </task>
     <task id="LOCAL-00001" summary="Plant and Sunflower done">
       <created>1612179651640</created>
@@ -198,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612299688144</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated Template classes">
+      <created>1612333136316</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612333136316</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,17 +232,18 @@
     <MESSAGE value="Card Sunflower done" />
     <MESSAGE value="Cards and coordinates and sun done" />
     <MESSAGE value="Added Classes again" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Classes again" />
+    <MESSAGE value="Updated Template classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Template classes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="151" y="0" key="CommitChangelistDialog2" timestamp="1612299686875">
+    <state x="151" y="0" key="CommitChangelistDialog2" timestamp="1612333134269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="151" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612299686875" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1612299694200">
+    <state x="151" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612333134269" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1612333146529">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612299694200" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612333146529" />
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1612333021209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
