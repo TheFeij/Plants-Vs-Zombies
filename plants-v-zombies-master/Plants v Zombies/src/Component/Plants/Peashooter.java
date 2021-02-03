@@ -1,9 +1,9 @@
 package Component.Plants;
+import Component.Bullets.Pea;
+import MusicPlayer.AudioPlayer;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
 import java.util.TimerTask;
 
 /**
@@ -25,14 +25,32 @@ public class Peashooter extends Plant implements Serializable {
         getTimer().schedule(new Shooter(), 0, 1000);
     }
 
+
+
+
     /**
-     * Shoot pea
+     * A method to shoot a pea
      */
-//    private void shoot(){
-//        Pea pea = new Pea(getLocX() + 50, getLocY(), getState());
-//        getState().addBullet(pea);
-//        AudioPlayer shootSound = new AudioPlayer("./Sounds/shoot.wav", 0);
-//    }
+    private void shoot(){
+        Pea pea = new Pea(getLocX() + 50, getLocY(), getState());
+        getState().addBullet(pea);
+        if(!getState().isMute()){
+            AudioPlayer shootSound = new AudioPlayer("./Sounds/shoot.wav", 0);
+        }
+    }
+
+    /**
+     *A method to set preparations to load the plant
+     */
+    public void load(){
+        super.load();
+        setCurrentImage(new ImageIcon("./Pics/peashooter.gif").getImage());
+        setTask(new Shooter());
+        getTimer().schedule(getTask(), 1000 - getLoadTime() ,1000);
+    }
+
+
+
 
     /**
      * A class to handle shooting process
@@ -44,16 +62,11 @@ public class Peashooter extends Plant implements Serializable {
          */
         @Override
         public void run() {
-//            if(getState().isZombieInWay(getLocY(), getLocX()))
-//                shoot();
+            if(getState().isZombieInWay(getLocY(), getLocX()))
+                shoot();
             setLoadTime(0);
             setTimeHolder(System.currentTimeMillis());
         }
     }
 
-    public void load(){
-        super.load();
-        setTask(new Shooter());
-        getTimer().schedule(getTask(), 1000 - getLoadTime() ,1000);
-    }
 }

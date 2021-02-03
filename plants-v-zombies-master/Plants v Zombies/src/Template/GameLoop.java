@@ -2,13 +2,6 @@
 package Template;
 
 import Network.Client;
-import Network.User;
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ConcurrentModificationException;
 
 /**
@@ -32,11 +25,20 @@ public class GameLoop implements Runnable {
 	 * Higher is better, but any value above 24 is fine.
 	 */
 	public static final int FPS = 30;
-	
+	//game frame
 	private GameFrame canvas;
+	//state of the game
 	private GameState state;
+	//client to connect to server
 	private Client client;
 
+
+	/**
+	 * A constructor to create a new game loop
+	 * @param frame game frame
+	 * @param state state of the game
+	 * @param client client to connect to server
+	 */
 	public GameLoop(GameFrame frame, GameState state, Client client) {
 		if(state.isSaved()){
 			state.setSaved(false);
@@ -54,8 +56,6 @@ public class GameLoop implements Runnable {
 	 * This must be called before the game loop starts.
 	 */
 	public void init() {
-
-
 	}
 
 	@Override
@@ -82,20 +82,23 @@ public class GameLoop implements Runnable {
 
 		}
 		canvas.setVisible(false);
-		int score;
-		if(state.getType().equals("Normal")){
-			if(state.isGameOver())
-				score = -1;
-			else
-				score = 3;
+		if(!state.isSaved()){
+			int score;
+			if(state.getType().equals("Normal")){
+				if(state.isGameOver())
+					score = -1;
+				else
+					score = 3;
+			}
+			else {
+				if(state.isGameOver())
+					score = -3;
+				else
+					score = 10;
+			}
+			client.setScore(score);
+			client.connect("Give Score");
 		}
-		else {
-			if(state.isGameOver())
-				score = -3;
-			else
-				score = 10;
-		}
-		client.setScore(score);
-		client.connect("Give Score");
+
 	}
 }

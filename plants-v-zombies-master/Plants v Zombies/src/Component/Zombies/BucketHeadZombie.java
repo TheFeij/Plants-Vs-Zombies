@@ -1,6 +1,5 @@
 package Component.Zombies;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
 
@@ -8,7 +7,7 @@ import java.io.Serializable;
  * This class represents a bucketHead zombie.
  *
  * @author Feij
- * @since 2021.1.31
+ * @since 2021.1.24
  */
 public class BucketHeadZombie extends Zombie implements Serializable {
 
@@ -40,12 +39,10 @@ public class BucketHeadZombie extends Zombie implements Serializable {
             setCurrentImage(new ImageIcon("./Pics/bucketheadzombie.gif").getImage());
     }
 
-
     /**
      * A method to change zombie situation to moving in map
      * this method should be overridden
      */
-    @Override
     public void moving() {
         setMovingImage();
         setSpeed(2);
@@ -59,13 +56,16 @@ public class BucketHeadZombie extends Zombie implements Serializable {
         super.update();
     }
 
-//    public void load(){        //to be completed when game state is written
-//        super.load();
-//        setMovingImage();
-//        if(getState().getType().equals("Normal"))
-//            getTimer().schedule(getTask(), 0, 53);
-//        else if(getState().getType().equals("Hard")){
-//            getTimer().schedule(getTask(), 0, 45);
-//        }
-//    }
+    /**
+     *A method to set preparations to load the zombie
+     */
+    public void load(){
+        super.load();
+        setMovingImage();
+        if(getState().getType().equals("Normal"))
+            getTimer().schedule(getTask(), 0, 53);
+        else if(getState().getType().equals("Hard")){
+            getTimer().schedule(getTask(), 0, 45);
+        }
+    }
 }

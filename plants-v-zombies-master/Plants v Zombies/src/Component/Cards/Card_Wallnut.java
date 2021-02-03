@@ -1,10 +1,7 @@
 package Component.Cards;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * A class to make wall nut card
@@ -25,11 +22,13 @@ public class Card_Wallnut extends Card implements Serializable {
         setPeriod(30000);
     }
 
+
+    //setters/////////////////////////////////////////////////////////////////
     public void setActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_wallnut.png").getImage());
     }
     public void setInActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_wallnut_Inactive.png").getImage());
     }
-
+    //////////////////////////////////////////////////////////////////////////
 }

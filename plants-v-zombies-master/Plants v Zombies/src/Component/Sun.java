@@ -1,20 +1,20 @@
 package Component;
 import Template.GameState;
-
 import javax.swing.*;
-import java.awt.*;
 import java.io.Serializable;
-import java.sql.Time;
-import java.util.Timer;
 import java.util.TimerTask;
 
 /**
  * A class to make sun
+ *
+ * @author Mohammad, Feij
  */
 public class Sun extends Component implements Serializable {
 
-    private int deltaY;
+    private int speed;
+    //the y location where sun sits
     private int finalY;
+    //time unit for measuring lifetime of the sun
     private int lifeTime;
 
     /**
@@ -27,7 +27,7 @@ public class Sun extends Component implements Serializable {
     public Sun(int locX, int locY, GameState state, int finalY){
         super(locX, locY, 0, 0, 0, state);
         setCurrentImage(new ImageIcon("./Pics/sun.gif").getImage());
-        deltaY = 2;
+        speed = 2;
         this.finalY = finalY;
         lifeTime = 0;
         getTimer().schedule(new Movement(), 0, 50);
@@ -41,6 +41,18 @@ public class Sun extends Component implements Serializable {
     }
     ////////////////////////////////////////
 
+    /**
+     * A method to set preparations for loading the component
+     */
+    public void load(){
+        super.load();
+        setCurrentImage(new ImageIcon("./Pics/sun.gif").getImage());
+        setTask(new Movement());
+        getTimer().schedule(getTask(), 0, 50);
+    }
+
+
+
 
 
     /**
@@ -50,22 +62,14 @@ public class Sun extends Component implements Serializable {
         @Override
         public void run() {
             if (getLocY() >= finalY){
-                deltaY = 0;
+                speed = 0;
             }
-            setLocY(getLocY() + deltaY);
-            if (deltaY == 0){
+            setLocY(getLocY() + speed);
+            if (speed == 0){
                 lifeTime ++ ;
             }
         }
 
-    }
-
-
-    public void load(){
-        super.load();
-        setCurrentImage(new ImageIcon("./Pics/sun.gif").getImage());
-        setTask(new Movement());
-        getTimer().schedule(getTask(), 0, 50);
     }
 
 }

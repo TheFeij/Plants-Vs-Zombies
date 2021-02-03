@@ -2,7 +2,6 @@ package Producers;
 
 import Component.Sun;
 import Template.GameState;
-
 import java.io.Serializable;
 import java.util.Random;
 import java.util.Timer;
@@ -10,13 +9,23 @@ import java.util.TimerTask;
 
 /**
  * A class to make sky
+ *
+ * @author Mohammad
  */
 public class Sky implements Serializable {
+    //random number generator
     Random random = new Random();
+    //state of the game
     GameState state;
+    //period of producing suns
     private int period;
+    //type of the game
     private String type;
-    private long loadTime, timeHolder;
+    //load time is used in loading and saving sky
+    private long loadTime;
+    //a field to save system time in certain places
+    private long timeHolder;
+    //timer responsible to produce suns
     private transient Timer timer;
 
 
@@ -40,18 +49,39 @@ public class Sky implements Serializable {
 
 
     /**
-     * Make sun
+     * A method Make sun
      */
     private void make() {
         int x = random.nextInt(9) * 130 + 110;
         int finalY = (random.nextInt(5) + 1) * 110 + 30;
         Sun sun = new Sun(x, 35, state, finalY);
-//        state.addSun(sun);
+        state.addSun(sun);
+    }
+
+    /**
+     * A method to set preparations to save sky
+     */
+    public void save(){
+        loadTime += System.currentTimeMillis() - timeHolder;
+        if(timer != null){
+            timer.cancel();
+            timer.purge();
+        }
+    }
+
+    /**
+     * A method to set preparations to load sky
+     */
+    public void load(){
+        timer = new Timer();
+        timeHolder = System.currentTimeMillis();
+        timer.schedule(new SunMaker(), period - loadTime, period);
     }
 
 
+
     /**
-     * A class to make sun
+     *A class to make sun
      */
     private class SunMaker extends TimerTask {
 
@@ -68,17 +98,4 @@ public class Sky implements Serializable {
 
     }
 
-    public void save(){
-        loadTime += System.currentTimeMillis() - timeHolder;
-        if(timer != null){
-            timer.cancel();
-            timer.purge();
-        }
-    }
-
-    public void load(){
-        timer = new Timer();
-        timeHolder = System.currentTimeMillis();
-        timer.schedule(new SunMaker(), period - loadTime, period);
-    }
 }

@@ -1,20 +1,18 @@
 /*** In The Name of Allah ***/
 package Template;
-
 import Component.Plants.*;
 import Component.Zombies.*;
 import Component.*;
 import Component.Cards.*;
 import Component.Bullets.*;
 import Coordinates.Coordinates;
-import Network.User;
 import Producers.*;
 import MusicPlayer.AudioPlayer;
 import javax.swing.*;
 import java.awt.event.*;
 import java.io.Serializable;
 import java.util.*;
-import java.util.Timer;
+
 
 /**
  * This class holds the state of game and all of its elements.
@@ -23,28 +21,55 @@ import java.util.Timer;
  */
 public class GameState implements Serializable {
 
+	//list of all bullets
 	private ArrayList<Bullet> bullets;
+	//list of all plants
 	private ArrayList<Plant> plants;
+	//list of all zombies
 	private ArrayList<Zombie> zombies;
+	//cards in the game
 	private Card[] cards;
+	//lawn mowers in the game
 	private LawnMower[] lawnMowers;
+	//list of all suns in the game
 	private ArrayList<Sun> suns;
+	//current selected card
 	private String currentCard;
+	//state of the game
 	private GameState state;
+	//mouse handler
 	private transient MouseHandler mouseHandler;
+	//point of the game
 	private int point;
+	//type of the game
 	private String type;
+	//wave number
 	private int waveNum;
+	//zombie factory responsible for producing zombies
 	private ZombieFactory factory;
+	//sky responsible for producing suns
 	private Sky sky;
+	//background audio player
 	private transient AudioPlayer backgroundSound;
+	//is game ended or not
 	private boolean endGame;
+	//is game over or not
 	private boolean gameOver;
+	//is game saved or not
 	private boolean saved;
+	//username of the player
 	private String username;
+	//is game sound muted or not
+	private boolean mute;
 
-	
-	public GameState(String type,String username) {
+
+	/**
+	 * A constructor to create a new game state
+	 * @param type type of the game
+	 * @param username username of the user
+	 * @param sound is game mute or not
+	 */
+	public GameState(String type,String username, String sound) {
 
 		bullets = new ArrayList<>();
 		zombies = new ArrayList<>();
@@ -61,11 +86,64 @@ public class GameState implements Serializable {
 		endGame = false;
 		saved = false;
 		gameOver = false;
+		mute = sound.equals("Mute");
 		this.username = username;
 		init();
 	}
 
 
+
+
+	//setters/////////////////////////////////////////////////////////////////////
+	public void setSaved(boolean saved) {
+		this.saved = saved;
+	}
+	public void setWaveNum(int waveNum) {
+		this.waveNum = waveNum;
+	}
+	public void setGameOver(boolean gameOver) {
+		this.gameOver = gameOver;
+	}
+	public void setEndGame(boolean endGame) {
+		this.endGame = endGame;
+	}
+	/////////////////////////////////////////////////////////////////////////////
+
+	//getters/////////////////////////////////////////////////////////////////////
+	public List<Bullet> getBullets() { return bullets; }
+	public int getWaveNum() {
+		return waveNum;
+	}
+	public List<Plant> getPlants() { return plants; }
+	public String getUsername() {
+		return username;
+	}
+	public List<Zombie> getZombies() { return zombies; }
+	public Card[] getCards() { return cards; }
+	public List<Sun> getSuns() { return suns; }
+	public boolean getEndGame(){
+		return endGame;
+	}
+	public LawnMower[] getLawnMowers() { return lawnMowers; }
+	public MouseListener getMouseListener() { return mouseHandler; }
+	public MouseMotionListener getMouseMotionListener() { return mouseHandler; }
+	public boolean isMute(){
+		return mute;
+	}
+	public int getPoint() { return point; }
+	public String getType() { return type; }
+	public boolean isGameOver() {
+		return gameOver;
+	}
+	public boolean isSaved() {
+		return saved;
+	}
+	//////////////////////////////////////////////////////////////////////////////
+
+
+	/**
+	 * A method to initialize game state
+	 */
 	public void init(){
 		sky = new Sky(state,type);
 		factory = new ZombieFactory(state);
@@ -96,14 +174,14 @@ public class GameState implements Serializable {
 		lawnMowers[3] = lawnMower4;
 		lawnMowers[4] = lawnMower5;
 
-		backgroundSound = new AudioPlayer("./Sounds/background.wav", -1);
+		if(!mute)
+			backgroundSound = new AudioPlayer("./Sounds/background.wav", -1);
 	}
-
 
 	/**
 	 * The method which updates the game state.
 	 */
-	public void update() throws InterruptedException, ConcurrentModificationException {
+	public void update() throws ConcurrentModificationException {
 		Iterator<Zombie> iterator1 = zombies.iterator();
 		while (iterator1.hasNext()) {
 			Zombie zombie  = iterator1.next();
@@ -123,7 +201,10 @@ public class GameState implements Serializable {
 				//if there are no lawnMower then its a game over
 				if (zombie.getLocX() < 0){
 					JOptionPane.showMessageDialog(null, "Game over!", null, JOptionPane.INFORMATION_MESSAGE);
-					AudioPlayer gameOverSound = new AudioPlayer("./Sounds/atebrains.wav", 0);
+					if(!mute){
+						AudioPlayer gameOverSound = new AudioPlayer("./Sounds/atebrains.wav", 0);
+					}
+
 					endGame = true;
 					gameOver = true;
 				}
@@ -207,6 +288,9 @@ public class GameState implements Serializable {
 
 	}
 
+	/**
+	 * A method to check is game ended or not
+	 */
 	public void checkEndGame(){
 		if(saved){
 			endGame = true;
@@ -215,84 +299,48 @@ public class GameState implements Serializable {
 			endGame = getWaveNum() == 4 && zombiesDestroyed();
 	}
 
+	/**
+	 * A method to add a bullet to bullets list
+	 * @param bullet bullet to be added
+	 */
 	public void addBullet(Bullet bullet){ bullets.add(bullet); }
 
-	public void removeBullet(Bullet bullet){ bullets.remove(bullet); }
-
+	/**
+	 * A method to add a plant to plants list
+	 * @param plant plant to be added
+	 */
 	public void addPlant(Plant plant){
 		plants.add(plant);
 	}
 
-	public void removePlant(Plant plant){ plants.remove(plant); }
-
-	public boolean isSaved() {
-		return saved;
-	}
-
+	/**
+	 * A method to add a zombie to zombies list
+	 * @param zombie zombie to be added
+	 */
 	public void addZombie(Zombie zombie){
 		zombies.add(zombie);
 	}
 
-	public List<Bullet> getBullets() { return bullets; }
-
-	public List<Plant> getPlants() { return plants; }
-
-	public String getUsername() {
-		return username;
-	}
-
-	public List<Zombie> getZombies() { return zombies; }
-
-	public void setGameOver(boolean gameOver) {
-		this.gameOver = gameOver;
-	}
-
-	public boolean isGameOver() {
-		return gameOver;
-	}
-
+	/**
+	 * A method to check if all zombies are destroyed or not
+	 * @return true if all zombies are destroyed
+	 */
 	public boolean zombiesDestroyed(){
 		return zombies.size() == 0;
 	}
 
-	public Card[] getCards() { return cards; }
-
-	//public void addCard(Card card) { cards.add(card); }
-
-	public List<Sun> getSuns() { return suns; }
-
-	public boolean getEndGame(){
-		return endGame;
-	}
-
-	public void setEndGame(boolean endGame) {
-		this.endGame = endGame;
-	}
-
+	/**
+	 * A method to add a sun to suns list
+	 * @param sun sun to be added
+	 */
 	public void addSun(Sun sun) { suns.add(sun); }
 
-	public LawnMower[] getLawnMowers() { return lawnMowers; }
-
-	public MouseListener getMouseListener() { return mouseHandler; }
-
-	public MouseMotionListener getMouseMotionListener() { return mouseHandler; }
-
-	public int getPoint() { return point; }
-
-	public String getType() { return type; }
-
-	public void setSaved(boolean saved) {
-		this.saved = saved;
-	}
-
-	public void setWaveNum(int waveNum) {
-        this.waveNum = waveNum;
-    }
-
-    public int getWaveNum() {
-        return waveNum;
-    }
-
+	/**
+	 * A method to check if zombies are in way or not
+	 * @param locY y location of the plant
+	 * @param locX x location of the plant
+	 * @return true if zombie is in way
+	 */
     public boolean isZombieInWay(int locY, int locX){
 		for(Zombie zombie : zombies){
 			if(Coordinates.checkRowEquality(zombie.getLocY(), locY) && zombie.getLocX() > locX)
@@ -301,7 +349,69 @@ public class GameState implements Serializable {
 		return false;
 	}
 
+	/**
+	 * A method to check if house is free or not
+	 * @param x x location of the house
+	 * @param y y location of the house
+	 * @return true if house is free
+	 */
+	public boolean isHouseFree(int x, int y){
+		for (Plant plant : plants){
+			if (plant.getLocX() == x && plant.getLocY() == y){
+				return false;
+			}
+		}
+		return true;
+	}
 
+	/**
+	 * A method to set preparations to save game state
+	 */
+	public void save(){
+		for(Zombie zombie : zombies)
+			zombie.save();
+		for(Plant plant : plants)
+			plant.save();
+		for(Bullet bullet : bullets)
+			bullet.save();
+		for(Card card : cards)
+			card.save();
+		for(LawnMower mower : lawnMowers)
+			mower.save();
+		for(Sun sun : suns)
+			sun.save();
+		factory.save();
+		sky.save();
+		if(!mute)
+			backgroundSound.stop();
+	}
+
+	/**
+	 * A method to set preparations to load game state
+	 */
+	public void load(){
+		for(Zombie zombie : zombies)
+			zombie.load();
+		for(Plant plant : plants)
+			plant.load();
+		for(Bullet bullet : bullets)
+			bullet.load();
+		for(Card card : cards)
+			card.load();
+		for(LawnMower mower : lawnMowers)
+			mower.load();
+		for(Sun sun : suns)
+			sun.load();
+		factory.load();
+		sky.load();
+		mouseHandler = new MouseHandler();
+		if(!mute)
+			backgroundSound = new AudioPlayer("./Sounds/background.wav", -1);
+	}
+
+	/**
+	 * A class to handle mouse events in game frame
+	 */
 	class MouseHandler extends MouseAdapter {
 
 		@Override
@@ -317,7 +427,9 @@ public class GameState implements Serializable {
 							Sun sun = iterator.next();
 							if(Math.abs(sun.getLocX() + 25 - x) <= 30 && Math.abs(sun.getLocY() + 25 - y) <= 40){
 								iterator.remove();
-								AudioPlayer ting = new AudioPlayer("./Sounds/ting.wav", 0);
+								if(!mute){
+									AudioPlayer ting = new AudioPlayer("./Sounds/ting.wav", 0);
+								}
 								point += 25;
 							}
 						}
@@ -411,52 +523,4 @@ public class GameState implements Serializable {
 
 	}
 
-
-
-	public boolean isHouseFree(int x, int y){
-		for (Plant plant : plants){
-			if (plant.getLocX() == x && plant.getLocY() == y){
-				return false;
-			}
-		}
-		return true;
-	}
-
-
-	public void save(){
-		for(Zombie zombie : zombies)
-			zombie.save();
-		for(Plant plant : plants)
-			plant.save();
-		for(Bullet bullet : bullets)
-			bullet.save();
-		for(Card card : cards)
-			card.save();
-		for(LawnMower mower : lawnMowers)
-			mower.save();
-		for(Sun sun : suns)
-			sun.save();
-		factory.save();
-		sky.save();
-		backgroundSound.stop();
-	}
-
-	public void load(){
-		for(Zombie zombie : zombies)
-			zombie.load();
-		for(Plant plant : plants)
-			plant.load();
-		for(Bullet bullet : bullets)
-			bullet.load();
-		for(Card card : cards)
-			card.load();
-		for(LawnMower mower : lawnMowers)
-			mower.load();
-		for(Sun sun : suns)
-			sun.load();
-		factory.load();
-		sky.load();
-		mouseHandler = new MouseHandler();
-		backgroundSound = new AudioPlayer("./Sounds/background.wav", -1);
-	}
 }

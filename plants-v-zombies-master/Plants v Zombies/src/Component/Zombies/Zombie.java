@@ -1,7 +1,8 @@
 package Component.Zombies;
 import Component.Component;
+import Component.Plants.Plant;
+import MusicPlayer.AudioPlayer;
 import Template.GameState;
-import javax.swing.*;
 import java.io.Serializable;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -11,7 +12,7 @@ import java.util.TimerTask;
  * coneHead zombie and bucketHead zombie
  *
  * @author Feij
- * @since 2021.1.31
+ * @since 2021.1.24
  */
 public abstract class Zombie extends Component implements Serializable {
 
@@ -24,14 +25,13 @@ public abstract class Zombie extends Component implements Serializable {
     //if zombie is destroyed in map or not
     private boolean isDestroyed;
     //the plant which zombie is eating
-//    private Plant plantToEat;   //to be added
-    //A timer to manage eating action of the zombie
+    private Plant plantToEat;
+    //a timer responsible for zombie eating process
     private transient Timer timerForEating;
-    //is zombie burning or not
-    private boolean isBurning;
-    //is zombie eating or not
+    //is zombie in eating state
     private boolean isEating;
-//    private  transient AudioPlayer eatingSound;   //to be added
+    //eating sound
+    private  transient AudioPlayer eatingSound;
 
     /**
      * A constructor to create a new zombie
@@ -49,7 +49,6 @@ public abstract class Zombie extends Component implements Serializable {
         setTimer(new Timer());
         setTask(new Mover());
         deathTimer = 25;
-        isBurning = false;
         isEating = false;
     }
 
@@ -85,25 +84,6 @@ public abstract class Zombie extends Component implements Serializable {
     //////////////////////////////////////////////////////////////
 
 
-    /**
-     * A method to set zombie image to dying
-     */
-    public void setDyingImage(){
-        setCurrentImage(new ImageIcon("zombie_normal_dying.gif").getImage());
-    }
-
-    /**
-     * A method to set image of zombie to burning
-     */
-    public void setBurningImage(){ setCurrentImage(new ImageIcon("burntZombie.gif").getImage()); }
-
-    /**
-     * A method to burn zombie
-     */
-    public void burn(){
-        setBurningImage();
-        isBurning = true;
-    }
 
     /**
      * A method to destroy zombie
@@ -113,8 +93,8 @@ public abstract class Zombie extends Component implements Serializable {
         if(timerForEating != null){
             timerForEating.cancel();
         }
-//        if(eatingSound != null)       //class to be written in future
-//            eatingSound.stop();
+        if(eatingSound != null)
+            eatingSound.stop();
     }
 
     /**
@@ -160,24 +140,27 @@ public abstract class Zombie extends Component implements Serializable {
         }
     }
 
-//    public void startEating(Plant plant){      //first need to have plant classes
-//        if(!isEating){
-//            setLoadTime(0);
-//            setTimeHolder(System.currentTimeMillis());
-//            setSpeed(0);
-//            plantToEat = plant;
-//            timerForEating = new Timer();
-//            isEating = true;
-//            timerForEating.schedule(new Eating(), 0, 1000);
-//        }
-//    }
+    /**
+     * A method to start eating
+     * @param plant plant to be eaten
+     */
+    public void startEating(Plant plant){
+        if(!isEating){
+            setLoadTime(0);
+            setTimeHolder(System.currentTimeMillis());
+            setSpeed(0);
+            plantToEat = plant;
+            timerForEating = new Timer();
+            isEating = true;
+            timerForEating.schedule(new Eating(), 0, 1000);
+        }
+    }
 
     /**
      * A method to stop eating
      */
     public void stopEating(){
         timerForEating.cancel();
-//        eatingSound.stop();       //need a class to play audio
         isEating = false;
         moving();
     }
@@ -189,51 +172,22 @@ public abstract class Zombie extends Component implements Serializable {
     public abstract void moving();
 
     /**
-     *Class responsible for zombie movement
+     * A method to change zombie situation to eating plants
+     * this method should be overridden
      */
-    private class Mover extends TimerTask{
-
-        /**
-         * The action to be performed by this timer task.
-         */
-        @Override
-        public void run() {
-            if (isBurning){
-                setSpeed(0);
-                decreaseLife(3);
-            }
-            setLocX(getLocX() - getSpeed());
-            update();
+    public void eating(){
+        if(!getState().isMute()){
+            eatingSound = new AudioPlayer("./Sounds/chomp.wav", 0);
         }
-    }
-
-//    /**
-//     * A method to change zombie situation to eating plants    //first need to have plant classes
-//     * this method should be overridden
-//     */
-//    public void eating(){
-//        eatingSound = new AudioPlayer("./Sounds/chomp.wav", 0);
-//        if (plantToEat.getLife() <= 0){
-//            stopEating();
-//            plantToEat.cancelTimer();
-//        }
-//        plantToEat.decreaseLife(getDamage());
-//    }
-
-    private class Eating extends TimerTask{
-        /**
-         * The action to be performed by this timer task.
-         */
-        @Override
-        public void run() {
-//            eating();
-            setLoadTime(0);
-            setTimeHolder(System.currentTimeMillis());
+        if (plantToEat.getLife() <= 0){
+            stopEating();
+            plantToEat.cancelTimer();
         }
+        plantToEat.decreaseLife(getDamage());
     }
 
     /**
-     * A method to load zombie
+     *A method to set preparations to load the zombie
      */
     public void load(){
         super.load();
@@ -243,4 +197,38 @@ public abstract class Zombie extends Component implements Serializable {
 
         setTask(new Mover());
     }
+
+
+
+
+    /**
+     * Class responsible for zombie eating
+     */
+    private class Eating extends TimerTask{
+        /**
+         * The action to be performed by this timer task.
+         */
+        @Override
+        public void run() {
+            eating();
+            setLoadTime(0);
+            setTimeHolder(System.currentTimeMillis());
+        }
+    }
+
+    /**
+     *Class responsible for zombie movement
+     */
+    private class Mover extends TimerTask{
+
+        /**
+         * The action to be performed by this timer task.
+         */
+        @Override
+        public void run() {
+            setLocX(getLocX() - getSpeed());
+            update();
+        }
+    }
+
 }

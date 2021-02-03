@@ -1,7 +1,9 @@
 package Component;
 import Template.GameState;
+
 import java.awt.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -11,7 +13,7 @@ import java.util.TimerTask;
  * it is the superclass of Zombie, Plant, Bullets, LawnMower and sun;
  *
  * @author Feij
- * @since 2021.1.31
+ * @since 2021.1.24
  */
 public class Component implements Serializable {
 
@@ -33,13 +35,14 @@ public class Component implements Serializable {
     private transient Timer timer;
     // task to be repeated to simulate bullet movement
     private transient TimerTask task;
-    // period of the component
+    // period of a component task, for example for peashooter
+    //it is the time between shooting a pea
     private int period;
-    // if component is dead or not
+    //if the component is dead or not
     private boolean isDead;
-    // a field to hold current time of system in certain times
+    //a field to hold time of the system for load and save purposes
     private long timeHolder;
-    //the amount of time we have waited, this is used when loading a game
+    //a field to show the load time period for load and save purposes
     private long loadTime;
 
     /**
@@ -96,11 +99,8 @@ public class Component implements Serializable {
     public boolean getIsDead(){
         return isDead;
     }
-    public void setLoadTime(long loadTime) {
-        this.loadTime = loadTime;
-    }
-    public void setTimeHolder(long timeHolder) {
-        this.timeHolder = timeHolder;
+    public long getLoadTime() {
+        return loadTime;
     }
     //////////////////////////////////////////////////////////////
 
@@ -136,26 +136,19 @@ public class Component implements Serializable {
     public void setIsDead(boolean dead) {
         isDead = dead;
     }
-    public long getLoadTime() {
-        return loadTime;
+    public void setLoadTime(long loadTime) {
+        this.loadTime = loadTime;
     }
-    public long getTimeHolder() {
-        return timeHolder;
+    public void setTimeHolder(long timeHolder) {
+        this.timeHolder = timeHolder;
     }
     //////////////////////////////////////////////////////////////
 
-    /**
-     * A method to cancel timer
-     */
-    public void cancelTimer(){ timer.cancel(); }
 
     /**
-     * A method to check if a component is dead or not
-     * @return true if the component is dead
+     * A method to cancel components timer
      */
-    public boolean isDead(){
-        return life <= 0;
-    }
+    public void cancelTimer(){ timer.cancel(); }
 
     /**
      * A method to decrease components life by a certain amount
@@ -166,7 +159,7 @@ public class Component implements Serializable {
     }
 
     /**
-     * A method to save component
+     * A method to set preparations for saving the component
      */
     public void save(){
         loadTime += System.currentTimeMillis() - timeHolder;
@@ -177,7 +170,7 @@ public class Component implements Serializable {
     }
 
     /**
-     * A method to load a component
+     * A method to set preparations for loading the component
      */
     public void load(){
         timer = new Timer();

@@ -10,7 +10,7 @@ import java.util.TimerTask;
  * and frozenPea
  *
  * @author Feij
- * @since 2021.2.1
+ * @since 2021.1.24
  */
 public abstract class Bullet extends Component implements Serializable {
 
@@ -31,12 +31,18 @@ public abstract class Bullet extends Component implements Serializable {
     }
 
 
+
     /**
-     * A method to destroy bullet
+     * A method to set preparations for loading the component
      */
-    public void destroyBullet(){
-        getTimer().cancel();
+    public void load(){
+        super.load();
+        setTask(new Mover());
     }
+
+
+
+
 
     /**
      *Class responsible for bullet movement
@@ -52,9 +58,4 @@ public abstract class Bullet extends Component implements Serializable {
         }
     }
 
-
-//    public void load(){
-//        super.load();
-//        setTask(new Mover());
-//    }
 }

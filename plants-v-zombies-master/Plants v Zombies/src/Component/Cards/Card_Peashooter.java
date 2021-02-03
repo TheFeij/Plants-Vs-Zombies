@@ -1,10 +1,7 @@
 package Component.Cards;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * A class to make pea shooter card
@@ -25,11 +22,12 @@ public class Card_Peashooter extends Card implements Serializable {
         setPeriod(7500);
     }
 
+    //setters/////////////////////////////////////////////////////////////////
     public void setActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_peashooter.png").getImage());
     }
     public void setInActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_peashooter_inactive.png").getImage());
     }
-
+    //////////////////////////////////////////////////////////////////////////
 }

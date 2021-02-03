@@ -1,9 +1,8 @@
 package Component.Plants;
+import Component.Sun;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
 import java.util.TimerTask;
 
 /**
@@ -12,7 +11,6 @@ import java.util.TimerTask;
  * @author Mohammad
  */
 public class Sunflower extends Plant implements Serializable {
-    GameState state ;
 
     /**
      * Perform any initialization that is required
@@ -22,27 +20,44 @@ public class Sunflower extends Plant implements Serializable {
      */
     public Sunflower(int locX, int locY, GameState state){
         super(locX, locY, 50, state);
-        this.state = state;
         setCurrentImage(new ImageIcon("./Pics/sun_flower.gif").getImage());
         setPeriod(20000);
-//        if (getState().getType().equals("Hard")){
-//            setPeriod(25000);
-//        }
+        if (getState().getType().equals("Hard")){
+            setPeriod(25000);
+        }
         getTimer().schedule(new SunMaker(), 2000, getPeriod());
     }
 
 
+
     /**
-     * Make sun
+     * A method to make a sun
      */
-//    private void make(){
-//        Sun sun = new Sun(getLocX() + 60, getLocY(), state, getLocY() + 30);
-//        getState().addSun(sun);
-//    }
+    private void make(){
+        Sun sun = new Sun(getLocX() + 60, getLocY(), getState(), getLocY() + 30);
+        getState().addSun(sun);
+    }
+
+    /**
+     *A method to set preparations to load the sunflower
+     */
+    public void load(){
+        super.load();
+        setCurrentImage(new ImageIcon("./Pics/sun_flower.gif").getImage());
+        setTask(new SunMaker());
+        if(getState().getType().equals("Hard")){
+            getTimer().schedule(getTask(), 25000 - getLoadTime() ,25000);
+        }
+        else
+            getTimer().schedule(getTask(), 20000 - getLoadTime() ,20000);
+
+    }
+
+
 
 
     /**
-     * A class to make sun
+     * A class to handel sun production
      */
     private class SunMaker extends TimerTask {
 
@@ -51,25 +66,10 @@ public class Sunflower extends Plant implements Serializable {
          */
         @Override
         public void run() {
-//            make();
+            make();
             setLoadTime(0);
             setTimeHolder(System.currentTimeMillis());
         }
     }
-
-
-
-//    public void load(){
-//        super.load();
-//        setTask(new SunMaker());
-//        if(getState().getType().equals("Hard")){
-//            getTimer().schedule(getTask(), 25000 - getLoadTime() ,25000);
-//        }
-//        else
-//            getTimer().schedule(getTask(), 20000 - getLoadTime() ,20000);
-//
-//    }
-
-
 
 }

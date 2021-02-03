@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Added classes User and Database">
+    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Added Server And Client classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +26,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (3)">
     <configuration name="DemoGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.demogame.DemoGame" />
       <module name="Java2DGraphicsGameTemplate" />
@@ -34,20 +34,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.demogame.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="game.template.bufferstrategy.Main" />
-      <module name="Java2DGraphicsGameTemplate" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="game.template.bufferstrategy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -69,6 +55,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Java2DGraphicsGameTemplate" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.sample.ball.Main" />
       <module name="Java2DGraphicsGameTemplate" />
@@ -76,6 +70,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.sample.ball.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Network.Server" />
+      <module name="Java2DGraphicsGameTemplate" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Network.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,16 +115,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main (2)" />
       <item itemvalue="Application.DemoGame" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Main (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (3)" />
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.DemoGame" />
         <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -150,6 +160,7 @@
       <workItem from="1612299589261" duration="240000" />
       <workItem from="1612333007533" duration="263000" />
       <workItem from="1612348722094" duration="114000" />
+      <workItem from="1612362468435" duration="325000" />
     </task>
     <task id="LOCAL-00001" summary="Plant and Sunflower done">
       <created>1612179651640</created>
@@ -214,7 +225,21 @@
       <option name="project" value="LOCAL" />
       <updated>1612348818255</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Server And Client classes">
+      <created>1612362552635</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1612362552635</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added Server And Client classes">
+      <created>1612362631788</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612362631788</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,17 +267,34 @@
     <MESSAGE value="Added Classes again" />
     <MESSAGE value="Updated Template classes" />
     <MESSAGE value="Added classes User and Database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added classes User and Database" />
+    <MESSAGE value="Added Server And Client classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Server And Client classes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="285" y="0" key="CommitChangelistDialog2" timestamp="1612362550801">
+    <state x="285" y="0" key="CommitChangelistDialog2" timestamp="1612362629713">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="285" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612362550801" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1612362555744">
+    <state x="285" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612362629713" />
+    <state width="1323" height="177" key="GridCell.Tab.0.bottom" timestamp="1612378239263">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612362555744" />
+    <state width="1323" height="177" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612378239263" />
+    <state width="1323" height="177" key="GridCell.Tab.0.center" timestamp="1612378239263">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="177" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612378239263" />
+    <state width="1323" height="177" key="GridCell.Tab.0.left" timestamp="1612378239262">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="177" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612378239262" />
+    <state width="1323" height="177" key="GridCell.Tab.0.right" timestamp="1612378239263">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="177" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612378239263" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1612362646566">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612362646566" />
     <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1612333021209">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

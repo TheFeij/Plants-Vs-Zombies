@@ -1,14 +1,10 @@
 package Component.Zombies;
-
 import Template.GameState;
 import javax.swing.*;
 import java.io.Serializable;
 
 /**
- * This class represents a football zombie.
- *
- * @author Feij
- * @since 2021.1.31
+ * This class represents a football zombie
  */
 public class FootballZombie extends Zombie implements Serializable {
 
@@ -35,7 +31,6 @@ public class FootballZombie extends Zombie implements Serializable {
      * A method to change zombie situation to moving in map
      * this method should be overridden
      */
-    @Override
     public void moving() {
         setSpeed(2);
     }
@@ -47,13 +42,16 @@ public class FootballZombie extends Zombie implements Serializable {
         super.update();
     }
 
-//    public void load(){
-//        super.load();
-//        setCurrentImage(new ImageIcon("./Pics/zombie_football.gif").getImage());
-//        if(getState().getType().equals("Normal"))
-//            getTimer().schedule(getTask(), 0, 53);
-//        else if(getState().getType().equals("Hard")){
-//            getTimer().schedule(getTask(), 0, 45);
-//        }
-//    }
+    /**
+     *A method to set preparations to load the zombie
+     */
+    public void load(){
+        super.load();
+        setCurrentImage(new ImageIcon("./Pics/zombie_football.gif").getImage());
+        if(getState().getType().equals("Normal"))
+            getTimer().schedule(getTask(), 0, 53);
+        else if(getState().getType().equals("Hard")){
+            getTimer().schedule(getTask(), 0, 45);
+        }
+    }
 }

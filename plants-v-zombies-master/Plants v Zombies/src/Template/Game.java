@@ -1,5 +1,7 @@
 /*** In The Name of Allah ***/
 package Template;
+import Network.Client;
+import Network.User;
 import Template.GameFrame;
 import Template.GameLoop;
 import Template.GameState;
@@ -8,13 +10,18 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 /**
- * Program start.
+ * A class to start a game.
  * 
  * @author Feij
  */
 public class Game {
 
-	
+
+	/**
+	 * A method to start a game
+	 * @param state state of the game
+	 * @param client client to connect to server
+	 */
     public void start(GameState state, Client client){
 		// Initialize the global thread-pool
 		ThreadPool.init();

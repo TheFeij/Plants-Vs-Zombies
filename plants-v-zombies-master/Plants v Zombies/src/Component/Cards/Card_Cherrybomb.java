@@ -1,13 +1,10 @@
 package Component.Cards;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
- * A class to make cherry bomb card
+ * This class represents a cherry bomb card
  *
  * @author Mohammad
  */
@@ -23,15 +20,18 @@ public class Card_Cherrybomb extends Card implements Serializable {
         super (locX, locY, state) ;
         setCurrentImage(new ImageIcon("./Pics/card_cherrybomb.png").getImage());
         setPeriod(30000);
-//        if (getState().getType().equals("Hard")){
-//            setPeriod(45000);
-//        }
+        if (getState().getType().equals("Hard")){
+            setPeriod(45000);
+        }
     }
 
+
+    //setters/////////////////////////////////////////////////////////////////
     public void setActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_cherrybomb.png").getImage());
     }
     public void setInActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_cherrybomb_inactive.png").getImage());
     }
+    //////////////////////////////////////////////////////////////////////////
 }

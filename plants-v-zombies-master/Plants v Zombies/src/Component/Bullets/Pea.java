@@ -1,16 +1,13 @@
 package Component.Bullets;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * This class represents a Pea.
  *
  * @author Feij
- * @since 2021.2.1
+ * @since 2021.1.24
  */
 public class Pea extends Bullet implements Serializable {
 
@@ -27,6 +24,9 @@ public class Pea extends Bullet implements Serializable {
     }
 
 
+    /**
+     * A method to set preparations for loading the component
+     */
     public void load(){
         super.load();
         setCurrentImage(new ImageIcon("./Pics/pea.png").getImage());

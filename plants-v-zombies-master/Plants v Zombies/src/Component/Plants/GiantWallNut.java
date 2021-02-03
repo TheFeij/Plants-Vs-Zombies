@@ -1,9 +1,7 @@
 package Component.Plants;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
 import java.util.TimerTask;
 
 /**
@@ -26,11 +24,30 @@ public class GiantWallNut extends Plant implements Serializable {
     }
 
 
+
+    /**
+     * A method to update image of the plant
+     */
     public void updateImage(){
         if (getLife() < 75){
             setCurrentImage(new ImageIcon("./Pics/walnut_half_life.gif").getImage());
         }
+        else
+            setCurrentImage(new ImageIcon("./Pics/walnut_full_life.gif").getImage());
     }
+
+    /**
+     *A method to set preparations to load the plant
+     */
+    public void load(){
+        super.load();
+        updateImage();
+        setTask(new Living());
+        getTimer().schedule(getTask(), 0 ,30);
+    }
+
+
+
 
     /**
      * A class to make life
@@ -45,11 +62,5 @@ public class GiantWallNut extends Plant implements Serializable {
             updateImage();
         }
     }
-
-//    public void load(){
-//        super.load();
-//        setTask(new Living());
-//        getTimer().schedule(getTask(), 0 ,30);
-//    }
 
 }

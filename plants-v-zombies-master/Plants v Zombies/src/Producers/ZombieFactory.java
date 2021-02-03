@@ -1,6 +1,9 @@
 package Producers;
 import Component.Zombies.*;
+import Coordinates.Coordinates;
+import MusicPlayer.AudioPlayer;
 import Template.GameState;
+
 import javax.swing.*;
 import java.io.Serializable;
 import java.security.SecureRandom;
@@ -8,14 +11,32 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * this class represent a zombie factory
+ * it is responsible for producing zombies
+ *
+ * @author Feij
+ */
 public class ZombieFactory implements Serializable {
 
+    //time unit used for waves
     private int time;
+    //timers responsible for each wave
     private transient Timer firstWave, secondWave, finalWave;
+    //tasks to be done in each wave
     private transient TimerTask wave1, wave2, wave3;
+    //state of the game
     private GameState state;
-    private long loadTime, timeHolder;
+    //load time is used when saving and loading
+    private long loadTime;
+    //it is used to hold system tome in certain places
+    private long timeHolder;
 
+
+    /**
+     * A constructor o create a new zombie factory
+     * @param state state of the game
+     */
     public ZombieFactory(GameState state){
         time = 0;
         this.state = state;
@@ -30,10 +51,13 @@ public class ZombieFactory implements Serializable {
         wave2 = new Wave2();
         wave3 = new Wave3();
 
-//        state.setWaveNum(0);
-        firstWave.schedule(wave1, 50000, 30000);
+        state.setWaveNum(0);
+        firstWave.scheduleAtFixedRate(wave1, 50000, 30000);
     }
 
+    /**
+     *  A method to set preparations to load the zombie factory
+     */
     public void load(){
         finalWave = new Timer();
         firstWave = new Timer();
@@ -46,19 +70,22 @@ public class ZombieFactory implements Serializable {
         timeHolder = System.currentTimeMillis();
 
         if(time == 0){
-            firstWave.schedule(wave1, 50000 - loadTime, 30000);
+            firstWave.scheduleAtFixedRate(wave1, 50000 - loadTime, 30000);
         }
         else if(time <= 5){
-            firstWave.schedule(wave1, 30000 - loadTime, 30000);
+            firstWave.scheduleAtFixedRate(wave1, 30000 - loadTime, 30000);
         }
         else if(time <= 11){
-            secondWave.schedule(wave2, 30000 - loadTime, 30000);
+            secondWave.scheduleAtFixedRate(wave2, 30000 - loadTime, 30000);
         }
         else if(time <= 17){
-            finalWave.schedule(wave3, 25000 - loadTime, 25000);
+            finalWave.scheduleAtFixedRate(wave3, 25000 - loadTime, 25000);
         }
     }
 
+    /**
+     * A method to set preparations to save zombie factory
+     */
     public void save(){
         loadTime += System.currentTimeMillis() - timeHolder;
         finalWave.cancel();
@@ -66,23 +93,28 @@ public class ZombieFactory implements Serializable {
         firstWave.cancel();
     }
 
+    /**
+     * A class to handle events in first wave
+     */
     private class Wave1 extends TimerTask{
         /**
          * The action to be performed by this timer task.
          */
         @Override
         public void run() {
-//            state.setWaveNum(1);
+            state.setWaveNum(1);
             loadTime = 0L;
             timeHolder = System.currentTimeMillis();
             if(time == 0){
-                //audio of zombie comming
+                if(!state.isMute()){
+                    AudioPlayer zombiesAreComming = new AudioPlayer("./Sounds/zombies_coming.wav", 0);
+                }
             }
             if(time == 5){
                 firstWave.cancel();
                 //GameFrame.printWave2();
-//                state.setWaveNum(2);
-                secondWave.schedule(wave2, 0, 30000);
+                state.setWaveNum(2);
+                secondWave.scheduleAtFixedRate(wave2, 0, 30000);
             }
             else {
                 zombieProducer();
@@ -97,21 +129,24 @@ public class ZombieFactory implements Serializable {
             Zombie zombie;
             SecureRandom random = new SecureRandom();
             int number = random.nextInt(10) + 1;
-//            int y = Coordinates.ys[random.nextInt(5)] - 10;
+            int y = Coordinates.ys[random.nextInt(5)] - 10;
 
 
             if(number <= 7){
-//                zombie = new NormalZombie(1280, y, state);
+                zombie = new NormalZombie(1280, y, state);
             }
-            else if(number <= 8){
-//                zombie = new ConeHeadZombie(1280, y, state, state.getType());
+            else if(number <= 9){
+                zombie = new ConeHeadZombie(1280, y, state, state.getType());
             }
             else
-//                zombie = new BucketHeadZombie(1280, y, state, state.getType());
-//            state.addZombie(zombie);
+                zombie = new BucketHeadZombie(1280, y, state, state.getType());
+            state.addZombie(zombie);
         }
     }
 
+    /**
+     * A class to handle events in second wave
+     */
     private class Wave2 extends TimerTask{
         /**
          * The action to be performed by this timer task.
@@ -123,8 +158,8 @@ public class ZombieFactory implements Serializable {
             if(time == 11){
                 secondWave.cancel();
                 //GameFrame.printWave3();
-//                state.setWaveNum(3);
-                finalWave.schedule(wave3, 0, 25000);
+                state.setWaveNum(3);
+                finalWave.scheduleAtFixedRate(wave3, 0, 25000);
             }
             else{
                 zombieProducer();
@@ -143,8 +178,8 @@ public class ZombieFactory implements Serializable {
 
             int y1, y2;
             do{
-//                y1 = Coordinates.ys[random.nextInt(5)] - 10;
-//                y2 = Coordinates.ys[random.nextInt(5)] - 10;
+                y1 = Coordinates.ys[random.nextInt(5)] - 10;
+                y2 = Coordinates.ys[random.nextInt(5)] - 10;
             }while (y1 == y2);
 
             produceZombie(number1, y1);
@@ -159,20 +194,22 @@ public class ZombieFactory implements Serializable {
             }
             else if(number <= 7){
                 //produce conHead zombie
-//                zombie = new ConeHeadZombie(1280, y, state, state.getType());
+                zombie = new ConeHeadZombie(1280, y, state, state.getType());
             }
             else if(number <= 9) {
                 //produce bucketHead zombie
-//                zombie = new BucketHeadZombie(1280, y, state, state.getType());
+                zombie = new BucketHeadZombie(1280, y, state, state.getType());
             }
             else
-//                zombie = new FootballZombie(1280, y, state, state.getType());
+                zombie = new FootballZombie(1280, y, state, state.getType());
 
-//            state.addZombie(zombie);
+            state.addZombie(zombie);
         }
     }
 
-
+    /**
+     * A class to handle events in final wave
+     */
     private class Wave3 extends TimerTask{
         /**
          * The action to be performed by this timer task.
@@ -182,7 +219,7 @@ public class ZombieFactory implements Serializable {
             loadTime = 0L;
             timeHolder = System.currentTimeMillis();
             if(time == 17){
-//                state.setWaveNum(4);
+                state.setWaveNum(4);
                 time++;
                 finalWave.cancel();
             }
@@ -203,8 +240,8 @@ public class ZombieFactory implements Serializable {
 
             int y1, y2;
             do{
-//                y1 = Coordinates.ys[random.nextInt(5)] - 10;
-//                y2 = Coordinates.ys[random.nextInt(5)] - 10;
+                y1 = Coordinates.ys[random.nextInt(5)] - 10;
+                y2 = Coordinates.ys[random.nextInt(5)] - 10;
             }while (y1 == y2);
 
             produceZombie(number1, y1);
@@ -215,16 +252,16 @@ public class ZombieFactory implements Serializable {
             Zombie zombie;
             if(number <= 3){
                 //produce conHead zombie
-//                zombie = new ConeHeadZombie(1280, y, state, state.getType());
+                zombie = new ConeHeadZombie(1280, y, state, state.getType());
             }
             else if(number <= 6) {
                 //produce bucketHead zombie
-//                zombie = new BucketHeadZombie(1280, y, state, state.getType());
+                zombie = new BucketHeadZombie(1280, y, state, state.getType());
             }
             else
-//                zombie = new FootballZombie(1280, y, state, state.getType());
+                zombie = new FootballZombie(1280, y, state, state.getType());
 
-//            state.addZombie(zombie);
+            state.addZombie(zombie);
         }
     }
 }

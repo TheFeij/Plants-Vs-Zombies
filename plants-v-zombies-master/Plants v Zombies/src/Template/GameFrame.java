@@ -37,12 +37,11 @@ public class GameFrame extends JFrame {
 
 	public static final int GAME_HEIGHT = 720;                  // 720p game resolution
 	public static final int GAME_WIDTH = 16 * GAME_HEIGHT / 9;  // wide aspect ratio
-
 	private Image background;									//Background image
 	private BufferStrategy bufferStrategy;
-
-
+	//state of the game
 	private GameState state;
+	//client to connect to server
 	private Client client;
 
 	/**
@@ -71,7 +70,6 @@ public class GameFrame extends JFrame {
 		bufferStrategy = getBufferStrategy();
 	}
 
-	
 	/**
 	 * Game rendering with triple-buffering using BufferStrategy.
 	 */
@@ -172,35 +170,32 @@ public class GameFrame extends JFrame {
 
 	}
 
-//	public void dispose(){
-//		try {
-//			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("save.bin"));
-//			state.save();
-//			out.writeObject(state);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		finally {
-//			super.dispose();
-//			System.exit(0);
-//		}
-//
-//	}
-
+	/**
+	 * A method to set game state
+	 * @param state game state to be set
+	 */
 	public void setState(GameState state) {
 		this.state = state;
 	}
 
+
+	/**
+	 * A class to handle key events in game frame
+	 */
 	private class KeyHandler extends KeyAdapter {
 
 		public void keyReleased(KeyEvent event){
 			if(event.getKeyCode() == KeyEvent.VK_ESCAPE){
 				save();
+				//serverSave();
 				setVisible(false);
 				PauseMenuFrame pauseMenuFrame = new PauseMenuFrame(client);
 			}
 		}
 
+		/**
+		 * A method to save game locally
+		 */
 		public void save(){
 			try {
 				String username = state.getUsername();
@@ -212,6 +207,17 @@ public class GameFrame extends JFrame {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+		}
+
+		/**
+		 * A method to save game to server
+		 */
+		public void serverSave(){
+			state.save();
+			state.setSaved(true);
+			client.setWantedSave("temp");
+			client.setSave(state);
+			client.connect("Save");
 		}
 	}
 }

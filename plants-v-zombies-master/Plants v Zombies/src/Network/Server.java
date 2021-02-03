@@ -14,6 +14,12 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
+/**
+ * This class represents a server
+ *
+ * @author Feij
+ */
 public class Server {
 
     public static void main(String[] args) {
@@ -31,6 +37,10 @@ public class Server {
         }
     }
 
+    /**
+     * A method to load database
+     * @return database
+     */
     public static DataBase loadDataBase(){
         Path path = Paths.get("./Server/database.bin");
         if(Files.exists(path)){
@@ -48,15 +58,27 @@ public class Server {
 
 }
 
+
+
+
+/**
+ * A class to handle clients
+ */
 class ClientHandler implements Runnable {
 
     private Socket connectionSocket;
     private DataBase dataBase;
 
+    /**
+     * A constructor to create a new client handler
+     * @param connectionSocket connection socket
+     * @param dataBase database
+     */
     public ClientHandler(Socket connectionSocket, DataBase dataBase) {
         this.connectionSocket = connectionSocket;
         this.dataBase = dataBase;
     }
+
 
     @Override
     public void run() {
@@ -156,6 +178,10 @@ class ClientHandler implements Runnable {
         }
     }
 
+    /**
+     * A method to save database
+     * @param dataBase database to be saved
+     */
     public static void saveDataBase(DataBase dataBase){
         if(!Files.exists(Paths.get("./Server")))
             new File("./Server").mkdirs();
@@ -175,6 +201,9 @@ class ClientHandler implements Runnable {
         }
     }
 
+    /**
+     * A method to close connection
+     */
     private void closeConnection(){
         try {
             System.out.println("Done!");

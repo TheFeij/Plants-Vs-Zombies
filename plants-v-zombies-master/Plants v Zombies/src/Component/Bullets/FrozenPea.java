@@ -2,13 +2,12 @@ package Component.Bullets;
 import Template.GameState;
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
 
 /**
  * This class represents a Frozen Pea.
  *
  * @author Feij
- * @since 2021.2.1
+ * @since 2021.1.24
  */
 public class FrozenPea extends Bullet implements Serializable {
 
@@ -25,6 +24,10 @@ public class FrozenPea extends Bullet implements Serializable {
         getTimer().schedule(getTask(), 0, 8);
     }
 
+
+    /**
+     * A method to set preparations for loading the component
+     */
     public void load(){
         super.load();
         setCurrentImage(new ImageIcon("./Pics/freezepea.png").getImage());

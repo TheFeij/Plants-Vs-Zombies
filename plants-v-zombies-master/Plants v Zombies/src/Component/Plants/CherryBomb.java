@@ -1,12 +1,14 @@
 package Component.Plants;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
 import java.util.TimerTask;
 
+
 /**
  * A class to make cherry bomb
+ *
+ * @author Mohammad
  */
 public class CherryBomb extends Plant implements Serializable {
 
@@ -24,6 +26,20 @@ public class CherryBomb extends Plant implements Serializable {
         getTimer().schedule(new Explosion(), 1000, 1);
     }
 
+
+
+    /**
+     *A method to set preparations to load the plant
+     */
+    public void load(){
+        super.load();
+        setCurrentImage(new ImageIcon("./Pics/cherrybomb.gif").getImage());
+        setTask(new Explosion());
+        getTimer().schedule(getTask(), 1000 - getLoadTime(), 1);
+    }
+
+
+
     /**
      * A class to handle explosion
      */
@@ -35,13 +51,8 @@ public class CherryBomb extends Plant implements Serializable {
         @Override
         public void run() {
             setIsDead(true);
+            getTimer().cancel();
         }
     }
 
-
-//    public void load(){
-//        super.load();
-//        setTask(new Explosion());
-//        getTimer().schedule(getTask(), 1000 - getLoadTime(), 1);
-//    }
 }

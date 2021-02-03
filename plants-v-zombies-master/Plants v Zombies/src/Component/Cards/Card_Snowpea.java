@@ -1,10 +1,7 @@
 package Component.Cards;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * A class to make snow pea card
@@ -23,16 +20,19 @@ public class Card_Snowpea extends Card implements Serializable {
         super (locX, locY, state) ;
         setCurrentImage(new ImageIcon("./Pics/card_freezepeashooter.png").getImage());
         setPeriod(7500);
-//        if (getState().getType().equals("Hard")){
-//            setPeriod(30000);
-//        }
+        if (getState().getType().equals("Hard")){
+            setPeriod(30000);
+        }
     }
 
+
+    //setters/////////////////////////////////////////////////////////////////
     public void setActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_freezepeashooter.png").getImage());
     }
     public void setInActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_freezepeashooter_inactive.png").getImage());
     }
+    //////////////////////////////////////////////////////////////////////////
 
 }

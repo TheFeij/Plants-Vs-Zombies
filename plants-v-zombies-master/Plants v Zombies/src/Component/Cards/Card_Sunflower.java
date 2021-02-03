@@ -1,10 +1,7 @@
 package Component.Cards;
 import Template.GameState;
-
 import javax.swing.*;
 import java.io.Serializable;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * A class to make sunflower card
@@ -25,12 +22,13 @@ public class Card_Sunflower extends Card implements Serializable {
         setPeriod(7500);
     }
 
+    //setters/////////////////////////////////////////////////////////////////
     public void setActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_sunflower.png").getImage());
     }
     public void setInActivePic(){
         setCurrentImage(new ImageIcon("./Pics/card_sunflower_inactive.png").getImage());
     }
-
+    //////////////////////////////////////////////////////////////////////////
 
 }

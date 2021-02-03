@@ -1,8 +1,6 @@
 package Network;
 
-import Template.Game;
 import Template.GameState;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,19 +8,34 @@ import java.util.Map;
 
 /**
  * This class represents a user in the game
+ *
+ * @author Feij
  */
 public class User implements Serializable {
 
+    //username of the user
     private String username;
+    //password of the user
     private String password;
+    //number of normal loses
     private int normalLoses;
+    //number of normal wins
     private int normalWins;
+    //number of hard loses
     private int hardLoses;
+    //number of hard wins
     private int hardWins;
+    //total score of the user
     private int score;
+    //server save repository
     private HashMap<String, GameState> saves;
 
 
+    /**
+     * A constructor to create a new user
+     * @param username username of the user
+     * @param password password of the user
+     */
     public User(String username, String password){
         this.username = username;
         this.password = password;
@@ -81,9 +94,23 @@ public class User implements Serializable {
     public int getNormalWins() {
         return normalWins;
     }
+    public GameState getSave(String saveName){
+        return saves.get(saveName);
+    }
+    public ArrayList<String> getSavesList(){
+        ArrayList<String> saveList = new ArrayList<>();
+        for(Map.Entry e : saves.entrySet()){
+            saveList.add((String) e.getKey());
+        }
+        return saveList;
+    }
     //////////////////////////////////////////////////////////////////////
 
 
+    /**
+     * A method to increase users score by a certain amount
+     * @param amount amount of score to be added
+     */
     public void increaseScore(int amount){
         if(amount == -1)
             normalLoses++;
@@ -95,17 +122,14 @@ public class User implements Serializable {
             hardWins++;
         score += amount;
     }
+
+    /**
+     * A method to add a save to users saves
+     * @param saveName name of the save
+     * @param save save to be added
+     */
     public void addSave(String saveName, GameState save){
         saves.put(saveName, save);
     }
-    public GameState getSave(String saveName){
-        return saves.get(saveName);
-    }
-    public ArrayList<String> getSavesList(){
-        ArrayList<String> saveList = new ArrayList<>();
-        for(Map.Entry e : saves.entrySet()){
-            saveList.add((String) e.getKey());
-        }
-        return saveList;
-    }
+
 }

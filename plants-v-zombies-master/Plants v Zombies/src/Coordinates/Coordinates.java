@@ -1,15 +1,19 @@
 package Coordinates;
+
 /**
  * A class to handle plants location
+ * contains static methods to give aid in
+ * managing map locations
+ *
+ * @author Feij, Mohammad
  */
 public class Coordinates {
+
+    //end of column x location
     public static int[] xs = new int[]{55, 180, 300, 440, 570, 695, 820, 955, 1075};
+    //end of row y location
     public static int[] ys = new int[]{125, 235, 345, 445, 565};
 
-    /**
-     * Perform any initialization that is required
-     */
-    public Coordinates(){}
 
     /**
      * Give a good location for plant
@@ -19,7 +23,6 @@ public class Coordinates {
      */
     public static int[] getCoordinates(int x, int y){
         int[] arr = new int[2];
-
 
         int xp = 0;
         int yp = 0;
@@ -75,12 +78,14 @@ public class Coordinates {
         arr[0] = xp;
         arr[1] = yp;
 
-
         return arr;
-
-
     }
 
+    /**
+     * A method to get row number of a certain y location
+     * @param locY y location
+     * @return row number of the y location
+     */
     public static int getRow(int locY){
         locY -= 60;
        for(int i = 0 ; i < 5 ; i++)
@@ -89,9 +94,14 @@ public class Coordinates {
        return -1;
     }
 
+    /**
+     * A method to check if two y locations are in the same row
+     * @param locY1 first y location
+     * @param locY2 second y location
+     * @return true if locations are at the same row
+     */
     public static boolean checkRowEquality(int locY1, int locY2){
         return getRow(locY1) == getRow(locY2);
     }
-
 
 }
