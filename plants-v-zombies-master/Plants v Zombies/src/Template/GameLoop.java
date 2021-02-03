@@ -1,6 +1,16 @@
 /*** In The Name of Allah ***/
 package Template;
 
+import Network.Client;
+import Network.User;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ConcurrentModificationException;
+
 /**
  * A very simple structure for the main game loop.
  * THIS IS NOT PERFECT, but works for most situations.
@@ -13,7 +23,7 @@ package Template;
  * patterns is available in the following link:
  *    http://gameprogrammingpatterns.com/game-loop.html
  * 
- * @author Seyed Mohammad Ghaffarian
+ * @author Seyed Mohammad Ghaffarian, Feij, Mohammad
  */
 public class GameLoop implements Runnable {
 	
@@ -25,26 +35,32 @@ public class GameLoop implements Runnable {
 	
 	private GameFrame canvas;
 	private GameState state;
+	private Client client;
 
-	public GameLoop(GameFrame frame) {
+	public GameLoop(GameFrame frame, GameState state, Client client) {
+		if(state.isSaved()){
+			state.setSaved(false);
+			state.load();
+		}
+		this.state = state;
 		canvas = frame;
+		canvas.setState(state);
+		canvas.addMouseListener(state.getMouseListener());
+		canvas.addMouseMotionListener(state.getMouseMotionListener());
+		this.client = client;
 	}
 	
 	/**
 	 * This must be called before the game loop starts.
 	 */
 	public void init() {
-		// Perform all initializations ...
-		state = new GameState();
-		canvas.addKeyListener(state.getKeyListener());
-		canvas.addMouseListener(state.getMouseListener());
-		canvas.addMouseMotionListener(state.getMouseMotionListener());
+
+
 	}
 
 	@Override
 	public void run() {
-		boolean gameOver = false;
-		while (!gameOver) {
+		while (!state.getEndGame()) {
 			try {
 				long start = System.currentTimeMillis();
 				//
@@ -54,8 +70,32 @@ public class GameLoop implements Runnable {
 				long delay = (1000 / FPS) - (System.currentTimeMillis() - start);
 				if (delay > 0)
 					Thread.sleep(delay);
-			} catch (InterruptedException ex) {
+			} catch (InterruptedException | NullPointerException | ConcurrentModificationException ex) {
+
+			}catch (IllegalStateException e){
+				break;
 			}
 		}
+		try{
+			canvas.render(state);
+		}catch (IllegalStateException ignored){
+
+		}
+		canvas.setVisible(false);
+		int score;
+		if(state.getType().equals("Normal")){
+			if(state.isGameOver())
+				score = -1;
+			else
+				score = 3;
+		}
+		else {
+			if(state.isGameOver())
+				score = -3;
+			else
+				score = 10;
+		}
+		client.setScore(score);
+		client.connect("Give Score");
 	}
 }

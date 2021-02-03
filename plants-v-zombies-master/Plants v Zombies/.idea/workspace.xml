@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Cards and coordinates and sun done" />
+    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Added Classes again">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +132,7 @@
       </list>
     </option>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -145,6 +147,7 @@
       <workItem from="1611394969542" duration="843000" />
       <workItem from="1611915467871" duration="1717000" />
       <workItem from="1612086486795" duration="23000" />
+      <workItem from="1612299589261" duration="240000" />
     </task>
     <task id="LOCAL-00001" summary="Plant and Sunflower done">
       <created>1612179651640</created>
@@ -188,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612296666334</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Classes again">
+      <created>1612299688144</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612299688144</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,12 +209,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Plant and Sunflower done" />
@@ -212,13 +223,22 @@
     <MESSAGE value="GiantWallNut and CherryBomb done" />
     <MESSAGE value="Card Sunflower done" />
     <MESSAGE value="Cards and coordinates and sun done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cards and coordinates and sun done" />
+    <MESSAGE value="Added Classes again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Classes again" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="151" y="0" key="CommitChangelistDialog2" timestamp="1612299609791">
+    <state x="151" y="0" key="CommitChangelistDialog2" timestamp="1612299686875">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="151" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612299609791" />
+    <state x="151" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612299686875" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1612299694200">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612299694200" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1612333021209">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1612333021209" />
   </component>
   <component name="masterDetails">
     <states>
