@@ -1,6 +1,7 @@
 /*** In The Name of Allah ***/
 package Template;
 
+import Gui.MainMenuFrame;
 import Network.Client;
 import java.util.ConcurrentModificationException;
 
@@ -99,6 +100,6 @@ public class GameLoop implements Runnable {
 			client.setScore(score);
 			client.connect("Give Score");
 		}
-
+		MainMenuFrame mainMenuFrame = new MainMenuFrame(client);
 	}
 }

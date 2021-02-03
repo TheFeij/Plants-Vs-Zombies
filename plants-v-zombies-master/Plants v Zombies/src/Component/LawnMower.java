@@ -107,6 +107,8 @@ public class LawnMower extends Component implements Serializable {
             }
             else if(time > 30){
                 setLocX(getLocX() + getSpeed());
+                if(getLocX() > 1280)
+                    getTimer().cancel();
             }
         }
     }

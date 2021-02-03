@@ -69,8 +69,12 @@ public class DataBase implements Serializable {
         while (true){
             int index = users.indexOf(user);
             users.remove(user);
-            if((user.getScore() > users.get(index - 1).getScore()) && index != 0){
-                users.add(index - 1, user);
+            if(index != 0){
+                if((user.getScore() > users.get(index - 1).getScore())){
+                    users.add(index - 1, user);
+                }
+                else
+                    break;
             }
             else{
                 users.add(index, user);
@@ -93,9 +97,13 @@ public class DataBase implements Serializable {
         user.increaseScore(amount);
         while (true){
             int index = users.indexOf(user);
-            if((user.getScore() < users.get(index + 1).getScore()) && users.size() >= index + 1){
-                users.remove(user);
-                users.add(index + 1, user);
+            if(users.size() > index + 1){
+                if((user.getScore() < users.get(index + 1).getScore())){
+                    users.remove(user);
+                    users.add(index + 1, user);
+                }
+                else
+                    break;
             }
             else{
                 break;

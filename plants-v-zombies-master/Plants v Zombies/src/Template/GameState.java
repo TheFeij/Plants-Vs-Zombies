@@ -200,13 +200,13 @@ public class GameState implements Serializable {
 
 				//if there are no lawnMower then its a game over
 				if (zombie.getLocX() < 0){
-					JOptionPane.showMessageDialog(null, "Game over!", null, JOptionPane.INFORMATION_MESSAGE);
 					if(!mute){
 						AudioPlayer gameOverSound = new AudioPlayer("./Sounds/atebrains.wav", 0);
+						backgroundSound.stop();
 					}
-
 					endGame = true;
 					gameOver = true;
+					return;
 				}
 			}
 
@@ -259,9 +259,11 @@ public class GameState implements Serializable {
 			}
 
 			for (LawnMower lawnMower : lawnMowers){
-				if (Coordinates.checkRowEquality(lawnMower.getLocY(), zombie.getLocY())
-						&& zombie.getLocX() - lawnMower.getLocX() < 20){
-					iterator1.remove();
+				if(lawnMower.getLocX() < 1280){
+					if (Coordinates.checkRowEquality(lawnMower.getLocY(), zombie.getLocY())
+							&& zombie.getLocX() - lawnMower.getLocX() < 20){
+						iterator1.remove();
+					}
 				}
 			}
 

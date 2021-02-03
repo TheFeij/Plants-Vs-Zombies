@@ -138,7 +138,7 @@ public class Client {
                 in.read(buffer);
                 out.write(username.getBytes());
                 in.read(buffer);
-                out.write(score);
+                out.write(String.valueOf(score).getBytes());
             }
             ///database save option
             else if((command.equals("Get Save List"))) {
