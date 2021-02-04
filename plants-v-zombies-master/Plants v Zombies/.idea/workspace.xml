@@ -1,12 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Final Commit, Cleaned the code!">
+    <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Fixed a Minor Bug!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/LawnMower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/LawnMower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Producers/ZombieFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Producers/ZombieFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saves/aa/temp.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Saves/aa/temp.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/database.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Server/database.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Producers/ZombieFactory$Wave1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Producers/ZombieFactory$Wave1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Producers/ZombieFactory$Wave2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Producers/ZombieFactory$Wave2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Producers/ZombieFactory$Wave3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Producers/ZombieFactory$Wave3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Producers/ZombieFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Producers/ZombieFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameLoop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameState$MouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameState$MouseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Bullets/Bullet$Mover.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Bullets/Bullet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Bullets/FrozenPea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Bullets/Pea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Cards/Card$LifeTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Cards/Card.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Cards/Card_Cherrybomb.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Cards/Card_Peashooter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Cards/Card_Repeater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Cards/Card_Snowpea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Cards/Card_Sunflower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Cards/Card_Wallnut.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Component.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/LawnMower$Mover.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/LawnMower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/CherryBomb$Explosion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/CherryBomb.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/GiantWallNut$Living.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/GiantWallNut.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/Peashooter$Shooter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/Peashooter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/Plant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/Repeater$Shooter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/Repeater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/Snowpea$Shooter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/Snowpea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/Sunflower$SunMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Plants/Sunflower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Sun$Movement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Sun.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Zombies/BucketHeadZombie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Zombies/ConeHeadZombie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Zombies/FootballZombie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Zombies/NormalZombie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Zombies/Zombie$Eating.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Zombies/Zombie$Mover.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Component/Zombies/Zombie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Coordinates/Coordinates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/LoadPage$Handler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/LoadPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/LoginFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/LoginFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/LoginFrame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/LoginFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/MainMenuFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/MainMenuFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/MainMenuFrame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/MainMenuFrame$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/MainMenuFrame$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/MainMenuFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/PauseMenuFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/PauseMenuFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/PauseMenuFrame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/PauseMenuFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/SavePage$Handler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/SavePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/ScoreBoard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Gui/SettingsFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/META-INF/Simple Plant Zombie Practice.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/MusicPlayer/AudioPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Network/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Network/ClientHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Network/DataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Network/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Network/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Producers/Sky$SunMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Producers/Sky.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Producers/ZombieFactory$Wave1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Producers/ZombieFactory$Wave2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Producers/ZombieFactory$Wave3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Producers/ZombieFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Template/Game$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Template/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Template/GameFrame$KeyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Template/GameFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Template/GameLoop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Template/GameState$MouseHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Template/GameState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Simple Plant Zombie Practice/Template/ThreadPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/GameLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/GameState.java" afterDir="false" />
     </list>
@@ -31,6 +118,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Application.Main (3)">
     <configuration name="DemoGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -169,6 +259,14 @@
       <workItem from="1612362468435" duration="325000" />
       <workItem from="1612378131110" duration="614000" />
       <workItem from="1612380287311" duration="3374000" />
+      <workItem from="1612383927036" duration="98000" />
+      <workItem from="1612387889349" duration="139000" />
+      <workItem from="1612389563530" duration="49000" />
+      <workItem from="1612419078705" duration="258000" />
+      <workItem from="1612420336501" duration="13000" />
+      <workItem from="1612420443322" duration="219000" />
+      <workItem from="1612426990855" duration="54000" />
+      <workItem from="1612460707856" duration="2517000" />
     </task>
     <task id="LOCAL-00001" summary="Plant and Sunflower done">
       <created>1612179651640</created>
@@ -254,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612378444024</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixed a Minor Bug!">
+      <created>1612383995738</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1612383995738</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,53 +389,66 @@
     <MESSAGE value="Added classes User and Database" />
     <MESSAGE value="Added Server And Client classes" />
     <MESSAGE value="Final Commit, Cleaned the code!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final Commit, Cleaned the code!" />
+    <MESSAGE value="Fixed a Minor Bug!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a Minor Bug!" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="0" key="CommitChangelistDialog2" timestamp="1612378440058">
+    <state x="413" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1612389602316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612378440058" />
-    <state width="1323" height="459" key="GridCell.Tab.0.bottom" timestamp="1612383666651">
+    <state x="413" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1612389602316" />
+    <state x="184" y="0" key="CommitChangelistDialog2" timestamp="1612383990442">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="459" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612383666651" />
-    <state width="1323" height="459" key="GridCell.Tab.0.center" timestamp="1612383666650">
+    <state x="184" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612383990442" />
+    <state width="1323" height="240" key="GridCell.Tab.0.bottom" timestamp="1612463181070">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="459" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612383666650" />
-    <state width="1323" height="459" key="GridCell.Tab.0.left" timestamp="1612383666650">
+    <state width="1323" height="240" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612463181070" />
+    <state width="1323" height="240" key="GridCell.Tab.0.center" timestamp="1612463181070">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="459" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612383666650" />
-    <state width="1323" height="459" key="GridCell.Tab.0.right" timestamp="1612383666650">
+    <state width="1323" height="240" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612463181070" />
+    <state width="1323" height="240" key="GridCell.Tab.0.left" timestamp="1612463181069">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="459" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612383666650" />
-    <state width="1323" height="63" key="GridCell.Tab.1.bottom" timestamp="1612383664622">
+    <state width="1323" height="240" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612463181069" />
+    <state width="1323" height="240" key="GridCell.Tab.0.right" timestamp="1612463181070">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="63" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612383664622" />
-    <state width="1323" height="63" key="GridCell.Tab.1.center" timestamp="1612383664622">
+    <state width="1323" height="240" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612463181070" />
+    <state width="1323" height="63" key="GridCell.Tab.1.bottom" timestamp="1612461200355">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="63" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1612383664622" />
-    <state width="1323" height="63" key="GridCell.Tab.1.left" timestamp="1612383664622">
+    <state width="1323" height="63" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612461200355" />
+    <state width="1323" height="63" key="GridCell.Tab.1.center" timestamp="1612461200355">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="63" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1612383664622" />
-    <state width="1323" height="63" key="GridCell.Tab.1.right" timestamp="1612383664622">
+    <state width="1323" height="63" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1612461200355" />
+    <state width="1323" height="63" key="GridCell.Tab.1.left" timestamp="1612461200355">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="63" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1612383664622" />
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1612378466460">
+    <state width="1323" height="63" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1612461200355" />
+    <state width="1323" height="63" key="GridCell.Tab.1.right" timestamp="1612461200355">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612378466460" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1612383930745">
+    <state width="1323" height="63" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1612461200355" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1612389606631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1612383930745" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1612389606631" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1612383998688">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612383998688" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1612460734245">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1612460734245" />
+    <state x="65" y="0" key="new project wizard" timestamp="1612427045165">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1612427045165" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -345,26 +463,10 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Producers/ZombieFactory.java</url>
-          <line>146</line>
+          <line>144</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

@@ -2,6 +2,7 @@
 package Template;
 
 import Gui.MainMenuFrame;
+import Gui.PauseMenuFrame;
 import Network.Client;
 import java.util.ConcurrentModificationException;
 
@@ -77,11 +78,12 @@ public class GameLoop implements Runnable {
 				break;
 			}
 		}
-		try{
-			canvas.render(state);
-		}catch (IllegalStateException ignored){
-
-		}
+//		try{
+//			canvas.render(state);
+//		}catch (IllegalStateException ignored){
+//
+//		}
+		state.stopBackgroundSound();
 		canvas.setVisible(false);
 		if(!state.isSaved()){
 			int score;
@@ -99,7 +101,7 @@ public class GameLoop implements Runnable {
 			}
 			client.setScore(score);
 			client.connect("Give Score");
+			MainMenuFrame mainMenuFrame = new MainMenuFrame(client);
 		}
-		MainMenuFrame mainMenuFrame = new MainMenuFrame(client);
 	}
 }

@@ -204,8 +204,8 @@ public class GameFrame extends JFrame {
 				state.save();
 				state.setSaved(true);
 				out.writeObject(state);
-			} catch (IOException e) {
-				e.printStackTrace();
+			} catch (IOException | ConcurrentModificationException e) {
+				save();
 			}
 		}
 

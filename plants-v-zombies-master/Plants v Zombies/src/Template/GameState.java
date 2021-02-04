@@ -267,7 +267,6 @@ public class GameState implements Serializable {
 				}
 			}
 
-			checkEndGame();
 		}
 
 		Iterator<Plant> plantIterator = plants.iterator();
@@ -287,6 +286,8 @@ public class GameState implements Serializable {
 				iterator2.remove();
 			}
 		}
+
+		checkEndGame();
 
 	}
 
@@ -328,6 +329,7 @@ public class GameState implements Serializable {
 	 * @return true if all zombies are destroyed
 	 */
 	public boolean zombiesDestroyed(){
+		System.out.println(zombies.size());
 		return zombies.size() == 0;
 	}
 
@@ -364,6 +366,14 @@ public class GameState implements Serializable {
 			}
 		}
 		return true;
+	}
+
+	/**
+	 * A method to stop background music
+	 */
+	public void stopBackgroundSound(){
+		if(!mute)
+			backgroundSound.stop();
 	}
 
 	/**
