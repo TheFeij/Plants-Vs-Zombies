@@ -28,7 +28,7 @@ public class PauseMenuFrame {
      * @param client client to connect to server
      */
     public PauseMenuFrame(Client client){
-        setMainFrameInfo();
+        setPauseFrameInfo();
         this.client = client;
         pauseFrame.setVisible(true);
     }
@@ -37,9 +37,9 @@ public class PauseMenuFrame {
     /**
      * A method to set pause frame info
      */
-    public void setMainFrameInfo (){
+    public void setPauseFrameInfo (){
         pauseFrame = new JFrame() ;
-        pauseFrame.setTitle("Main menu") ;
+        pauseFrame.setTitle("Pause menu") ;
         pauseFrame.setSize(400, 200) ;
         pauseFrame.setLocation(600, 300) ;
         pauseFrame.setLayout(new GridLayout(3, 1));
@@ -91,7 +91,7 @@ public class PauseMenuFrame {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //serverResume();
+//                serverResume();
                 resume();
             }
 

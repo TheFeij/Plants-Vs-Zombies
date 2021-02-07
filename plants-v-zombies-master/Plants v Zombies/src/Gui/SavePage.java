@@ -87,7 +87,7 @@ public class SavePage extends JFrame {
         mainPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
 
         update();
-        //serverSavesUpdate();
+//        serverSavesUpdate();
 
         setContentPane(mainPanel);
         setVisible(true);
@@ -159,7 +159,7 @@ public class SavePage extends JFrame {
             new File("./Saves/" + client.getUsername()).mkdirs();
             if(e.getSource() == saveButton){
                 save();
-                //serverSave();
+//                serverSave();
             }
             else if(e.getSource() == backButton){
                 setVisible(false);

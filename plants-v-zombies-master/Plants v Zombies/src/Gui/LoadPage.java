@@ -84,7 +84,7 @@ public class LoadPage extends JFrame {
         mainPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 5));
 
         update();
-        //serverSavesUpdate();
+//        serverSavesUpdate();
 
         setContentPane(mainPanel);
         setVisible(true);
@@ -150,7 +150,7 @@ public class LoadPage extends JFrame {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == loadButton){
                 load();
-                //dataBaseLoad();
+//                dataBaseLoad();
             }
             else if(e.getSource() == backButton){
                 setVisible(false);

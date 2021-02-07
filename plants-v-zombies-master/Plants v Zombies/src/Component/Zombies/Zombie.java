@@ -203,7 +203,10 @@ public abstract class Zombie extends Component implements Serializable {
      */
     public void save(){
         super.save();
-        eatingSound.stop();
+//        if(eatingSound != null)
+//            eatingSound.stop();
+        if(timerForEating != null)
+            timerForEating.cancel();
     }
 
 

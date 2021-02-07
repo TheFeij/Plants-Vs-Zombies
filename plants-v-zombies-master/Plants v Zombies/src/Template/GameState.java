@@ -138,6 +138,9 @@ public class GameState implements Serializable {
 	public boolean isSaved() {
 		return saved;
 	}
+	public AudioPlayer getBackgroundSound() {
+		return backgroundSound;
+	}
 	//////////////////////////////////////////////////////////////////////////////
 
 
@@ -249,7 +252,7 @@ public class GameState implements Serializable {
 						while (iterator7.hasNext()){
 							Zombie zombie1 = iterator7.next();
 							if (Math.abs(zombie1.getLocX() - plant.getLocX()) < 195 &&
-									(plant.getLocY() - 140 < zombie1.getLocX() && plant.getLocY() + 195 > zombie1.getLocX())){
+									(plant.getLocY() - 140 < zombie1.getLocY() && plant.getLocY() + 195 > zombie1.getLocY())){
 								zombie1.destroyZombie();
 								iterator7.remove();
 							}
@@ -373,8 +376,11 @@ public class GameState implements Serializable {
 	 * A method to stop background music
 	 */
 	public void stopBackgroundSound(){
-		if(!mute)
-			backgroundSound.stop();
+		if(!mute){
+			if(backgroundSound != null){
+				backgroundSound.stop();
+			}
+		}
 	}
 
 	/**

@@ -3,26 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="3b614a82-a9f9-4e43-b77a-14dfd36cf229" name="Default" comment="Fixed a Minor Bug!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/aa/1.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/aa/2.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/aa/temp.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/abolfazl/  abolfazl1.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/abolfazl/ saveEndGame.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/abolfazl/save1.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/abolfazl/save2.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/abolfazl/save3.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/abolfazl/save4.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/abolfazl/save5.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saves/abolfazl/temp.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/database.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Gui/ScoreBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Gui/ScoreBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Network/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Network/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameFrame$KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameFrame$KeyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameLoop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pics/mainBG.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pics/mainBG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Component/Zombies/Zombie$Eating.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Component/Zombies/Zombie$Eating.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Component/Zombies/Zombie$Mover.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Component/Zombies/Zombie$Mover.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Component/Zombies/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Component/Zombies/Zombie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Gui/PauseMenuFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Gui/PauseMenuFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameState$MouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameState$MouseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java2DGraphicsGameTemplate/Template/GameState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Zombies/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Zombies/Zombie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/ScoreBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/ScoreBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Network/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Network/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/LoadPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/LoadPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/PauseMenuFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/PauseMenuFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/SavePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/SavePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Producers/ZombieFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Producers/ZombieFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/GameFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/GameLoop.java" afterDir="false" />
@@ -203,7 +194,9 @@
       <workItem from="1612617007808" duration="817000" />
       <workItem from="1612631772898" duration="2217000" />
       <workItem from="1612640478676" duration="4570000" />
-      <workItem from="1612676858810" duration="1498000" />
+      <workItem from="1612676858810" duration="8314000" />
+      <workItem from="1612703992415" duration="621000" />
+      <workItem from="1612704962510" duration="2713000" />
     </task>
     <task id="LOCAL-00001" summary="Plant and Sunflower done">
       <created>1612179651640</created>
@@ -303,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612463265962</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fixed a Minor Bug!">
+      <created>1612678417695</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1612678417695</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,42 +341,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1612389602316" />
-    <state x="184" y="0" key="CommitChangelistDialog2" timestamp="1612463263011">
+    <state x="184" y="0" key="CommitChangelistDialog2" timestamp="1612678415039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612463263011" />
-    <state width="1306" height="171" key="GridCell.Tab.0.bottom" timestamp="1612645055928">
+    <state x="184" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612678415039" />
+    <state width="1367" height="674" key="GridCell.Tab.0.bottom" timestamp="1612707853775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="171" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612645055928" />
-    <state width="1306" height="171" key="GridCell.Tab.0.center" timestamp="1612645055928">
+    <state width="1367" height="674" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612707853775" />
+    <state width="1367" height="674" key="GridCell.Tab.0.center" timestamp="1612707853775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="171" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612645055928" />
-    <state width="1306" height="171" key="GridCell.Tab.0.left" timestamp="1612645055928">
+    <state width="1367" height="674" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612707853775" />
+    <state width="1367" height="674" key="GridCell.Tab.0.left" timestamp="1612707853775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="171" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612645055928" />
-    <state width="1306" height="171" key="GridCell.Tab.0.right" timestamp="1612645055928">
+    <state width="1367" height="674" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612707853775" />
+    <state width="1367" height="674" key="GridCell.Tab.0.right" timestamp="1612707853775">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="171" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612645055928" />
-    <state width="1306" height="171" key="GridCell.Tab.1.bottom" timestamp="1612645055929">
+    <state width="1367" height="674" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612707853775" />
+    <state width="1323" height="173" key="GridCell.Tab.1.bottom" timestamp="1612706280051">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="171" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612645055929" />
-    <state width="1306" height="171" key="GridCell.Tab.1.center" timestamp="1612645055929">
+    <state width="1323" height="173" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612706280051" />
+    <state width="1323" height="173" key="GridCell.Tab.1.center" timestamp="1612706280051">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="171" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1612645055929" />
-    <state width="1306" height="171" key="GridCell.Tab.1.left" timestamp="1612645055929">
+    <state width="1323" height="173" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1612706280051" />
+    <state width="1323" height="173" key="GridCell.Tab.1.left" timestamp="1612706280051">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="171" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1612645055929" />
-    <state width="1306" height="171" key="GridCell.Tab.1.right" timestamp="1612645055929">
+    <state width="1323" height="173" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1612706280051" />
+    <state width="1323" height="173" key="GridCell.Tab.1.right" timestamp="1612706280051">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="171" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1612645055929" />
+    <state width="1323" height="173" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1612706280051" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1612389606631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -385,10 +385,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612383998688" />
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1612676859135">
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1612703992442">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1612676859135" />
+    <state x="391" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1612703992442" />
     <state x="65" y="0" key="new project wizard" timestamp="1612677969849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -399,7 +399,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Producers/ZombieFactory.java</url>
-          <line>130</line>
+          <line>127</line>
           <properties class="Producers.ZombieFactory.Wave1" method="zombieProducer">
             <option name="EMULATED" value="true" />
           </properties>
@@ -407,12 +407,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Producers/ZombieFactory.java</url>
-          <line>147</line>
+          <line>144</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Template/GameLoop.java</url>
-          <line>109</line>
+          <line>110</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

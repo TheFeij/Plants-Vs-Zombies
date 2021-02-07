@@ -86,6 +86,7 @@ public class GameLoop implements Runnable {
 //		}
 //		state.stopBackgroundSound();
 		canvas.setVisible(false);
+		state.stopBackgroundSound();
 		if(!state.isSaved()){
 			int score;
 			if(state.getType().equals("Normal")){
