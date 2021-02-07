@@ -31,6 +31,8 @@ public class ZombieFactory implements Serializable {
     private long loadTime;
     //it is used to hold system tome in certain places
     private long timeHolder;
+    //zombies are comming sound
+    private AudioPlayer zombiesComming;
 
 
     /**
@@ -91,6 +93,7 @@ public class ZombieFactory implements Serializable {
         finalWave.cancel();
         secondWave.cancel();
         firstWave.cancel();
+        zombiesComming.stop();
     }
 
     /**
@@ -107,7 +110,7 @@ public class ZombieFactory implements Serializable {
             timeHolder = System.currentTimeMillis();
             if(time == 0){
                 if(!state.isMute()){
-                    AudioPlayer zombiesAreComming = new AudioPlayer("./Sounds/zombies_coming.wav", 0);
+                    zombiesComming = new AudioPlayer("./Sounds/zombies_coming.wav", 0);
                 }
             }
             if(time == 5){

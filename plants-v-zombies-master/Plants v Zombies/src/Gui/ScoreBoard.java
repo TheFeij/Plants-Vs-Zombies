@@ -28,7 +28,7 @@ public class ScoreBoard extends JFrame {
      */
     public ScoreBoard(Client client){
         super("Top Players");
-        this.setSize(new Dimension(500, 500));
+        this.setSize(new Dimension(800, 500));
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

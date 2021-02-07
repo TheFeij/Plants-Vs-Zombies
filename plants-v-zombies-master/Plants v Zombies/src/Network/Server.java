@@ -186,14 +186,6 @@ class ClientHandler implements Runnable {
         if(!Files.exists(Paths.get("./Server")))
             new File("./Server").mkdirs();
 
-        Path path = Paths.get("./Server/database.bin");
-        if(Files.exists(path)){
-            try {
-                Files.delete(path);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
         try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("./Server/database.bin"))){
             out.writeObject(dataBase);
         } catch (IOException e) {

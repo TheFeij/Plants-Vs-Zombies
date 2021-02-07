@@ -198,7 +198,13 @@ public abstract class Zombie extends Component implements Serializable {
         setTask(new Mover());
     }
 
-
+    /**
+     * A method to set preparations to save game
+     */
+    public void save(){
+        super.save();
+        eatingSound.stop();
+    }
 
 
     /**

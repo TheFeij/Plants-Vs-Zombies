@@ -188,8 +188,9 @@ public class GameFrame extends JFrame {
 			if(event.getKeyCode() == KeyEvent.VK_ESCAPE){
 				save();
 				//serverSave();
-				setVisible(false);
-				PauseMenuFrame pauseMenuFrame = new PauseMenuFrame(client);
+
+//				setVisible(false);
+//				PauseMenuFrame pauseMenuFrame = new PauseMenuFrame(client);
 			}
 		}
 
@@ -198,7 +199,7 @@ public class GameFrame extends JFrame {
 		 */
 		public void save(){
 			try {
-				String username = state.getUsername();
+				String username = client.getUsername();
 				new File("./Saves/" + username).mkdirs();
 				ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("./Saves/" + username + "/temp.bin"));
 				state.save();
@@ -213,11 +214,15 @@ public class GameFrame extends JFrame {
 		 * A method to save game to server
 		 */
 		public void serverSave(){
-			state.save();
-			state.setSaved(true);
-			client.setWantedSave("temp");
-			client.setSave(state);
-			client.connect("Save");
+			try{
+				state.save();
+				state.setSaved(true);
+				client.setWantedSave("temp");
+				client.setSave(state);
+				client.connect("Save");
+			}catch (ConcurrentModificationException e){
+				serverSave();
+			}
 		}
 	}
 }

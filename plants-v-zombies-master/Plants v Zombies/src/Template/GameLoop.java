@@ -44,6 +44,7 @@ public class GameLoop implements Runnable {
 	public GameLoop(GameFrame frame, GameState state, Client client) {
 		if(state.isSaved()){
 			state.setSaved(false);
+			state.setEndGame(false);
 			state.load();
 		}
 		this.state = state;
@@ -83,7 +84,7 @@ public class GameLoop implements Runnable {
 //		}catch (IllegalStateException ignored){
 //
 //		}
-		state.stopBackgroundSound();
+//		state.stopBackgroundSound();
 		canvas.setVisible(false);
 		if(!state.isSaved()){
 			int score;
@@ -102,6 +103,9 @@ public class GameLoop implements Runnable {
 			client.setScore(score);
 			client.connect("Give Score");
 			MainMenuFrame mainMenuFrame = new MainMenuFrame(client);
+		}
+		else{
+			PauseMenuFrame pauseMenuFrame = new PauseMenuFrame(client);
 		}
 	}
 }

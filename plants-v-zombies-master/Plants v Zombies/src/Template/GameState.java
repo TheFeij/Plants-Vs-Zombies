@@ -248,7 +248,8 @@ public class GameState implements Serializable {
 						Iterator<Zombie> iterator7 = zombies.iterator();
 						while (iterator7.hasNext()){
 							Zombie zombie1 = iterator7.next();
-							if (Math.abs(zombie1.getLocX() - plant.getLocX()) < 140 && Math.abs(zombie1.getLocY() - plant.getLocY()) < 130){
+							if (Math.abs(zombie1.getLocX() - plant.getLocX()) < 195 &&
+									(plant.getLocY() - 140 < zombie1.getLocX() && plant.getLocY() + 195 > zombie1.getLocX())){
 								zombie1.destroyZombie();
 								iterator7.remove();
 							}
